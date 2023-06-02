@@ -25,4 +25,16 @@ module.exports = {
     // Takes care of cleaning up old assets, leaving only the most relevant assets
     new CleanWebpackPlugin(),
   ],
+  // module holds loaders
+  module: {
+    // Rules can dictate what to do when encountering a file that ends in a specific extension
+    rules: [
+      {
+        //test: if the file ends in this extension...
+        test: /\.css$/,
+        // use: use the loader provided
+        use: ["css-loader"],
+      },
+    ],
+  },
 };
