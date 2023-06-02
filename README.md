@@ -34,11 +34,17 @@ Webpack takes all of the script modules used builds out a dependency graph for u
 
 With webpack it keeps track of the dependency graph and spits out a script that can be fed into the index.
 
-### Current State of RPM
+### Babel
 
-- We began using React almost two years ago.
-- In order to get it up and running quickly, we used Create React App. https://create-react-app.dev/
+Babel transpiles or converts code into a single version of JS so more browsers can understand it
+In this case, modern JS (ES6) is being converted to an older version of JS (ES5)
+The translated code is what gets written in the bundle so that this code can reach a wider audience by being more compatible with browsers
+
+### Current Challenge
+
+- In order to get React up and running quickly in a pre-existing application, we set up shop using Create React App. https://create-react-app.dev/
 - CRA sets up the dev environment for you to make the entry point into using React easy.
 - Under the hood, CRA uses WEBPACK!!! and BABEL!!! CRA manages that for us. However, we don't have access to those configurations.
 - In order to gain access, we would need to eject the React app and manage our own webpack configurations.
-- Now that our React code base is growing, it makes sense for us to gain more control over how React gets bundled. This way we can have multiple entry points for different areas where React is used in RPM.
+- Now that our React code base is growing, it makes sense for us to gain more control over how React gets bundled.
+- This way we can have multiple entry points for different areas where React is used in the application
