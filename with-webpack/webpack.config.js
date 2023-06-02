@@ -33,7 +33,7 @@ module.exports = {
         //test: if the file ends in this extension...
         test: /\.css$/,
         // use: use the loader provided
-        use: ["css-loader"],
+        use: ["style-loader", "css-loader"], // this order matters
       },
     ],
   },
