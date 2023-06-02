@@ -1,3 +1,9 @@
+# About
+
+- This is a mini project I'm working on to understand the role that webpack plays in a modern development, specifically using React.
+- While this project is meant for personal learning, the best way to follow my thought process is to read through the commit history.
+- Be forewarned: commits were not proofread and some of the early commits are likely a chaotic as I was attempting to figure out how to set this up.
+
 # Webpack
 
 ### What is webpack?
