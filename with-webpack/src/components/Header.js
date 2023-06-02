@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = (props) => {
+export default Header = (props) => {
   const { links, ...rest } = props;
   const clickLinks = links.map((link, i) => {
     return React.createElement("a", { key: i, href: link.path }, link.name);
