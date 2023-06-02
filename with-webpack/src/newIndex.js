@@ -5,3 +5,5 @@ import App from "./App";
 const container = document.getElementById("entryPointID");
 const root = ReactDOM.createRoot(container);
 root.render(React.createElement(App));
+
+// renamed this file to from index to newIndex to break the default and show how to configure the newIndex with webpack
