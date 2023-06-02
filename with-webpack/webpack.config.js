@@ -11,6 +11,6 @@ module.exports = {
     //the default __dirname that webpack spits out is 'dist', however, this can be configured to be anything. In this case, 'build'.
     path: path.resolve(__dirname, "build"),
     // the default file name that webpack spits out is main.js, however, this can be configured. In this case, 'bundle.js'.
-    filename: "bundle.js",
+    filename: "[contenthash]bundle.js",
   },
 };
