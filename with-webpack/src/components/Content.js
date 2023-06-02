@@ -1,6 +1,6 @@
 import React from "react";
 
-export default Content = () => {
+const Content = () => {
   const [counter, setCounter] = React.useState(0);
 
   return React.createElement(
@@ -18,3 +18,5 @@ export default Content = () => {
     )
   );
 };
+
+export default Content;

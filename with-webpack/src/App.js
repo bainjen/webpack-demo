@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import Content from "./components/Content";
 
-export default App = () => {
+const App = () => {
   const links = [
     { path: "/", name: "home" },
     { path: "/buttons", name: "buttons" },
@@ -15,3 +15,4 @@ export default App = () => {
     React.createElement(Content, null)
   );
 };
+export default App;
