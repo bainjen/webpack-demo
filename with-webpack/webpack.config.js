@@ -1,6 +1,7 @@
 // Path is a build in node module that comes with Node.js
 // It enables developers to create file paths independent of the platform
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -13,4 +14,9 @@ module.exports = {
     // the default file name that webpack spits out is main.js, however, this can be configured. In this case, 'bundle.js'.
     filename: "[contenthash]bundle.js",
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+    }),
+  ],
 };
