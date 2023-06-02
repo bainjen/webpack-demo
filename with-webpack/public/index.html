@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Didi's Donuts</title>
+
+    <!-- Styles to be applied to this HTML -->
+    <link rel="stylesheet" href="../src/App.css" />
+
+    <!-- React CDNs taken from their website -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+  </head>
+  <body>
+    <!-- The entry point div that is being looked for from within  index.js -->
+    <div id="entryPointID"></div>
+    <!-- This order is important because the index has a dependency on App, which has a dependency on Header and Content. -->
+    <!-- Changing the order would break the code. -->
+    <script src="../src/components/Header.js"></script>
+    <script src="../src/components/Content.js"></script>
+    <script src="../src/App.js"></script>
+    <script src="../src/index.js"></script>
+  </body>
+</html>
+
+<!-- CHECKPOINT NOTES -->
+<!--Starting the with-webpack project by first copying over the contents of without-webpack-->
+<!--These files will be further manipulated-->
