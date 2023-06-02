@@ -14,6 +14,7 @@ const App = () => {
 
   console.log("Change is good");
   console.log("Especially when it comes in the form of loonies and toonies");
+  console.log("pizza time!");
 
   const links = [
     { path: "/", name: "home" },

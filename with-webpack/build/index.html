@@ -5,20 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Didi's Donuts Are Better With Webpack</title>
+    <script defer src="9800334d5477f2ecdbc8bundle.js"></script>
   </head>
   <body>
     <!-- The entry point div that is being looked for from within  index.js -->
     <div id="entryPointID"></div>
-    <script src="9aab49ac451d4972824ebundle.js"></script>
   </body>
 </html>
 <!-- CHECKPOINT NOTES -->
-<!--A webpack.config.js file has been created to specify a new directory for webpack output-->
-<!--The config also customizes the name of the script source so this has been changed from the dafault of main.js tp bundle.js -->
-<!--Webpack is now hashing bundle.js-->
-<!--A new hash signals that the bundle file has a change!-->
-<!--Content hashing is a cache busting strategy. The new file name forces the browser to make a request to serve the new file-->
-<!--If nothing in the code changes, the hash will stay the same. This allows the browser to use the cached file-->
-<!--The current setup is not efficient and it's annoying. For ecxample: -->
-<!--Every time we run webpack and create a new hashed bundle file, it must be manually updated here in index.html!-->
-<!--The build/dist directory is getting bloated! Every time a change is made and webpack is run, it adds a new bundle file with an updated hash-->
+<!--After instantiating HtmlWebpackPlugin in the webpack.config, this index.html now auto-generated -->
+<!--Notice the script tag us now in the head with a 'defer' tag -->
+<!--I did not manually copy and paste the updated hashed bundle file. Webpack did it for me. -->
