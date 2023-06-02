@@ -1,12 +1,7 @@
+import React from "react";
+
 const Content = () => {
   const [counter, setCounter] = React.useState(0);
-
-  // return(
-  //   <div>
-  //     <h1>:( :( :( </h1>
-  //     <div>this will not work :(</div>
-  //   </div>
-  // )
 
   return React.createElement(
     "div",

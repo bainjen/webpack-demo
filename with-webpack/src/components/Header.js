@@ -1,3 +1,5 @@
+import React from "react";
+
 const Header = (props) => {
   const { links, ...rest } = props;
   const clickLinks = links.map((link, i) => {
