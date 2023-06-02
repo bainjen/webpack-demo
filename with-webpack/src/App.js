@@ -2,8 +2,12 @@ import React from "react";
 import Header from "./components/Header";
 import Content from "./components/Content";
 
-// This is the entry point to the application
+// ERROR in ./src/App.css 1:0
+// Module parse failed: Unexpected token (1:0)
+// You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders
+import "./App.css";
 
+// This is the entry point to the application
 const App = () => {
   console.log(
     "If we save this file change and run yarn or npm start again, we should be able to find this message in the console. This shows that webpack has spit out a new bundle ZIPPITYZAP!"
