@@ -12,6 +12,9 @@ const App = () => {
     "Likewise, inspecting main.js in the browser will reveal the code bundle. We can also search this file to see how this code exists in the minified version"
   );
 
+  console.log("Change is good");
+  console.log("Especially when it comes in the form of loonies and toonies");
+
   const links = [
     { path: "/", name: "home" },
     { path: "/buttons", name: "buttons" },
