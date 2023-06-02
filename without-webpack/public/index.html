@@ -22,6 +22,8 @@
   <body>
     <!-- The entry point div that is being looked for from within  index.js -->
     <div id="entryPointID"></div>
+    <!-- This order is important because the index has a dependency on App, which has a dependency on Header and Content. -->
+    <!-- Changing the order would break the code. -->
     <script src="../src/components/Header.js"></script>
     <script src="../src/components/Content.js"></script>
     <script src="../src/App.js"></script>
