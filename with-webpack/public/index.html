@@ -12,4 +12,11 @@
   </body>
 </html>
 <!-- CHECKPOINT NOTES -->
-<!--This file is now obsolete because we will use the index.html in the dist folder that webpack generates-->
+<!--This is the template that webpack looks for to inject the script it generates-->
+<!--This is specified in webpack.config.js in the plugins array:-->
+<!-- 
+  new HtmlWebpackPlugin({
+      template: "./public/index.html",
+    }), 
+-->
+<!--Whatever we add to ./public/index.html will appear in ./build/index.html with the bundled script injected into the head-->

@@ -5,14 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Didi's Donuts Are Better With Webpack</title>
-    <script defer src="9800334d5477f2ecdbc8bundle.js"></script>
-  </head>
+  <script defer src="9800334d5477f2ecdbc8bundle.js"></script></head>
   <body>
     <!-- The entry point div that is being looked for from within  index.js -->
     <div id="entryPointID"></div>
   </body>
 </html>
 <!-- CHECKPOINT NOTES -->
-<!--After instantiating HtmlWebpackPlugin in the webpack.config, this index.html now auto-generated -->
-<!--Notice the script tag us now in the head with a 'defer' tag -->
-<!--I did not manually copy and paste the updated hashed bundle file. Webpack did it for me. -->
+<!--This is the template that webpack looks for to inject the script it generates-->
+<!--This is specified in webpack.config.js in the plugins array:-->
+<!-- 
+  new HtmlWebpackPlugin({
+      template: "./public/index.html",
+    }), 
+-->
+<!--Whatever we add to ./public/index.html will appear in ./build/index.html with the bundled script injected into the head-->
