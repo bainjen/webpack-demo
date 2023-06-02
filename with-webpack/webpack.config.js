@@ -31,9 +31,9 @@ module.exports = {
     rules: [
       {
         //test: if the file ends in this extension...
-        test: /\.css$/,
+        test: /\.(css|scss)$/,
         // use: use the loader provided
-        use: ["style-loader", "css-loader"], // this order matters
+        use: ["style-loader", "css-loader", "sass-loader"], // this order matters
       },
     ],
   },

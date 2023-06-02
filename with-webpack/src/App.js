@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import Content from "./components/Content";
 
-import "./App.css";
+import "./App.scss";
 
 // This is the entry point to the application
 const App = () => {
