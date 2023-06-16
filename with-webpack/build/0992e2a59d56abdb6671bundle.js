@@ -177,6 +177,7 @@ header {
   align-items: baseline;
   padding: 10px 20px;
   background-color: palevioletred;
+  color: lime;
 }
 
 header > nav {
