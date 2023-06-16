@@ -9,6 +9,9 @@ module.exports = {
   // this rule makes main.js easier to read in development mode
   devtool: false,
   entry: "./src/newIndex.js",
+  devServer: {
+    port: 3000,
+  },
   output: {
     //the default __dirname that webpack spits out is 'dist', however, this can be configured to be anything. In this case, 'build'.
     path: path.resolve(__dirname, "build"),
