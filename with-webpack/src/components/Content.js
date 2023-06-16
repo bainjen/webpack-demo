@@ -27,9 +27,9 @@ const Content = () => {
   return (
     <div className='counter'>
       <p>I would like {counter} donuts.</p>
-      <button onClick={() => setCounter(counter + 11)}>Another, please</button>
+      <button onClick={() => setCounter(counter + 1)}>Another, please</button>
       <p>babel is neat! I'm transpiled!</p>
-      <p className='sizzle'>reload like it's hot</p>
+      <p className='sizzle'>reload like it's hot </p>
     </div>
   );
 };
