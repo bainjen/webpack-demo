@@ -16,7 +16,7 @@ import React from "react";
 
 // export default Header;
 
-const Header = ({ links, ...rest }) => {
+const Header = ({ title, links, ...rest }) => {
   const clickLinks = links.map((link, i) => {
     return (
       <a key={i} href={link.path}>
@@ -27,7 +27,7 @@ const Header = ({ links, ...rest }) => {
 
   return (
     <header>
-      <h2>Donuts make me go nuts!</h2>
+      <h2>{title}</h2>
       <nav>{clickLinks}</nav>
     </header>
   );
