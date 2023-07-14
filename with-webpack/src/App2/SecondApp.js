@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
-import Content from "../components/Content";
 
+import "./App2.scss";
 import "../App.scss";
 
 // This is the entry point to the application
@@ -16,7 +16,7 @@ const SecondApp = () => {
   return (
     <>
       <Header title={"A very friendly page"} links={links}></Header>
-      <div>hello</div>
+      <div className='app2'>hello</div>
       <div>greetings</div>
       <div>I hope you have a splendid day!</div>
       <div>Just dandy!</div>
