@@ -4,6 +4,7 @@ const common = require("./webpack.config");
 const { merge } = require("webpack-merge");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = merge(common, {
   mode: "production",
@@ -14,7 +15,8 @@ module.exports = merge(common, {
     filename: "[name].[contenthash].bundle.js",
   },
   optimization: {
-    minimizer: [new OptimizeCssAssetsPlugin()],
+    // Terser is the default minimizer for JS in webpack. It is used automatically, but gets overwritten by OptimizeCssAssetsPlugin
+    minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin()],
   },
   plugins: [
     // Takes care of cleaning up old assets, leaving only the relevant assets
