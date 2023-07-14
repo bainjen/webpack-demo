@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "./components/Header";
-import Content from "./components/Content";
+import Header from "../components/Header";
+import Content from "../components/Content";
 
-import "./App.scss";
+import "../App.scss";
 
 // This is the entry point to the application
 const App = () => {
@@ -22,10 +22,12 @@ const App = () => {
     { path: "/buttons", name: "buttons" },
   ];
 
+  const title = "Donuts make me go nuts!";
+
   return React.createElement(
     "div",
     { className: "App" },
-    React.createElement(Header, { links }),
+    React.createElement(Header, { title, links }),
     React.createElement(Content, null)
   );
 };
