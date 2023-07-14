@@ -5,7 +5,12 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 // DEFAULT SCAFFOLDING
 module.exports = {
-  entry: "./src/newIndex.js",
+  //entry: "./src/App1/newIndex.js",
+  entry: {
+    app1: "./src/App1/newIndex.js",
+    app2: "./src/App2/secondIndex.js",
+    app3: "./src/App3/thirdIndex.js",
+  },
   // Plugins add an extra layer of functionality to webpack to make it more configurable https://webpack.js.org/plugins/
   plugins: [
     new HtmlWebpackPlugin({
