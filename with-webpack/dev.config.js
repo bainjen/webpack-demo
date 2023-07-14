@@ -13,4 +13,19 @@ module.exports = merge(common, {
   devServer: {
     port: 3000,
   },
+  module: {
+    // Rules can dictate what to do when encountering a file that ends in a specific extension
+    rules: [
+      {
+        //test: if the file ends in this extension...
+        test: /\.(css|scss)$/,
+        // use: use the loader provided
+        use: [
+          "style-loader", // 3. inject styles into the dom
+          "css-loader", // 2. Turn css into commonjs
+          "sass-loader", // 1. turn sass into css
+        ], // this order matters
+      },
+    ],
+  },
 });
