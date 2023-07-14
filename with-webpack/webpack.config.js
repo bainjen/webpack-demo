@@ -10,6 +10,7 @@ module.exports = {
     app1: "./src/App1/newIndex.js",
     app2: "./src/App2/secondIndex.js",
     app3: "./src/App3/thirdIndex.js",
+    vendor: "./src/vendor.js",
   },
   // Plugins add an extra layer of functionality to webpack to make it more configurable https://webpack.js.org/plugins/
   plugins: [

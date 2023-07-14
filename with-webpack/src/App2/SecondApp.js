@@ -14,13 +14,13 @@ const SecondApp = () => {
   ];
 
   return (
-    <>
+    <div className='app2--container'>
       <Header title={"A very friendly page"} links={links}></Header>
       <div className='app2'>hello</div>
       <div>greetings</div>
       <div>I hope you have a splendid day!</div>
       <div>Just dandy!</div>
-    </>
+    </div>
   );
 };
 export default SecondApp;

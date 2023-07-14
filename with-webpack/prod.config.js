@@ -9,7 +9,7 @@ module.exports = merge(common, {
     //the default __dirname that webpack spits out is 'dist', however, this can be configured to be anything. In this case, 'build'.
     path: path.resolve(__dirname, "build"),
     // the default file name that webpack spits out is main.js, however, this can be configured. In this case, 'bundle.js'.
-    filename: "[contenthash]bundle.js",
+    filename: "[name].[contenthash].bundle.js",
   },
   plugins: [
     // Takes care of cleaning up old assets, leaving only the relevant assets
