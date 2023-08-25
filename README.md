@@ -13,6 +13,7 @@
 - Under the hood, CRA uses WEBPACK!!! and BABEL!!! CRA manages that for us. However, we don't have access to those configurations.
 - In order to gain access, we would need to eject the React app and manage our own webpack configurations.
 - Now that our React code base is growing, it makes sense for us to gain more control over how React gets bundled.
+- Furthermore, CRA has been deprecated. Womp, womp!
 - This way we can have multiple entry points for different areas where React is used in the application and we can stop loading unnecessary code.
 
 # Webpack
@@ -41,6 +42,8 @@ Webpack can manage other assets, too! For example, webpack can bundle CSS, too.
 
 Webpack minifies code and puts it into compact bundles of our specifications, which can be served up to the browser.
 
+Of course, there are alternative solutions to webpack, and that's great! But since Create React App ejects a webpack configuration, webpack is the focus of this exercise!
+
 ### Babel
 
 Babel transpiles or converts code into a single version of JS.
@@ -60,5 +63,39 @@ Without tools to transpile the code, it must be written in a way that the browse
 ### Things I learned by setting up a webpack configuration file
 
 - The webpack configuration allows you to define a custom entry point -- or entry points! -- using the 'entry' key. If you don't define it, the assumed entry point is src/index.js
+- To make multiple entry points, the 'entry' key of the configuration should get set to an object rather than to a string value for the single entry path. It looks something like this:
+
+```json
+ entry: {
+    app1: "./src/App1/newIndex.js",
+    app2: "./src/App2/secondIndex.js",
+    app3: "./src/App3/thirdIndex.js",
+    vendor: "./src/vendor.js",
+  },
+```
+
+The above example will spit out four, separate bundles of code, one for each entry point specified.
+
+- Splitting code is handy for optimization because smaller code bundles can be loaded on demand, or in parallel, as needed. This can reduce load time, by allowing us to load only the code we need, in any given situation.
 - Running the webpack executable will automatically generate a `dist` directory which contains the minified code bundle. This default is also customizable via the 'output' key of the configuration.
-- Webpack
+- Webpack can specify a mode of 'development' or 'production'. Development mode is more developer friendly because it's more verbose, whereas the production mode minifies bundles for optimization. When using development mode, it is most helpful to also specify `devtool: false` in the webpack.config.
+- The output of webpack can be hashed using `[contenthash]` which provides cache busting. A new hash will get output any time the content is different. If the content doesn't change, the hash will remain the same. If the code changes, the new hash will force the browser to make a new request. This prevents the browser from serving an outdated file.
+- webpack-dev-server is a package that can be installed to facilitate hot reloading during development. It will generate the bundle(s) and and the index.html. It can be added to the start script in the package.json as `server`. Mine looks like this: `"start": "webpack-dev-server --config dev.config.js --open"`
+- Webpack supports having multiple configurations for different uses. A common separation would be to specify different configurations for production and development. These configurations might share some common configurations, but would diverge in matters such as code minification.
+
+#### Useful plugins for the webpack config
+
+- There are all kinds of plugins, depending on your needs... https://webpack.js.org/plugins/
+- `clean-webpack-plugin`: Removes bloat by deleting old files and only keeping the most updated assets.
+- `html-webpack-plugin`: This will automate the process of updating the index.html template every time the webpack script is run. If the hash changes on the bundle name, the index.html will get updated.
+- `webpack-merge`: This helps with having multiple webpack configurations because you can setup basic, shared configurations and merge those common configurations into configurations for specific use-cases.
+- `mini-css-extract-plugin`: This puts all of the styles into the head for a smother UI loading experience. It's most useful in production configurations because it will give the user a better experience, but can slow things down in dev, so is not necessary there.
+- `terser-webpack-plugin`: This is the default minimizer for JS in webpack and it is used automatically, but gets overwritten by the use of the OptimizeCssAssetsPlugin, so it must be manually imported in some cases.
+
+#### Useful loaders for the webpack config
+
+- There are all kinds of loaders, depending on your needs... https://webpack.js.org/loaders/
+- `css-loader`: Converts the CSS into a valid CSS module that gets read into the bundle, but does not handle injecting it into the DOM
+- `style-loader`: Handles injecting the CSS into the DOM so they get applied to the UI
+- There are also loaders specific to css pre-processors, for example, `sass-loader`, which can be imported based on need.
+- `babel-loader`: Allows modern JS to be read into the browser. The babel loader can be configured with various presets to suit each code base's needs, for example to use React and Typescript
